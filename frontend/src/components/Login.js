@@ -21,9 +21,9 @@ const Login = () => {
       // login
       try {
         const res = await axios.post(`${USER_API_END_POINT}/login`, { email, password }, {
-          headers: {
-            'Content-Type': "application/json"
-          },
+          // headers: {
+          //   'Content-Type': "application/json"
+          // },
           withCredentials: true
         }); 
         dispatch(getUser(res?.data?.user));
@@ -39,9 +39,9 @@ const Login = () => {
       // signup
       try {
         const res = await axios.post(`${USER_API_END_POINT}/register`, { name, username, email, password }, {
-          headers: {
-            'Content-Type': "application/json"
-          },
+          // headers: {
+          //   'Content-Type': "application/json"
+          // },
           withCredentials: true
         }); 
         if(res.data.success){
