@@ -11,6 +11,14 @@ dotenv.config({
 })
 databaseConnection();
 const app = express(); 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://twitter-mern-wqom.vercel.app');
+    // You can add more headers as needed
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    next();
+  });
+  
 
 // middlewares
 app.use(express.urlencoded({
@@ -23,12 +31,8 @@ app.use(cookieParser());
 //     credentials:true
 // }
 
-app.use(function (request, response, next) {
-    response.header("Access-Control-Allow-Origin", "*");
-    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-    next();
-  });
-  
+
+
 app.use(cors({
     origin: 'https://twitter-mern-wqom.vercel.app',
     methods: ["POST", "GET", "PUT"],
