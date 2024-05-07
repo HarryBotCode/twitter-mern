@@ -23,8 +23,8 @@ app.use(cookieParser());
 //     credentials:true
 // }
 app.use(cors({
-    origin: 'https://twitter-mern-wqom.vercel.app',
-    credentials: true
+    origin: 'http://localhost:3000',
+    credentials:true
   }));
 
 // api
@@ -34,5 +34,5 @@ app.use("/api/v1/tweet", tweetRoute);
 const PORT = 8080;
 
 app.listen(PORT,() => {
-    console.log(`Server listen at port ${process.env.PORT}`);
+    console.log(`Server listen at port ${PORT}`);
 })
