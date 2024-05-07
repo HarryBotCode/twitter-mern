@@ -20,6 +20,7 @@ app.use(express.json());
 app.use(cookieParser());
 const corsOptions = {
     origin:"https://twitter-mern-wqom.vercel.app",
+     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials:true
 }
 app.use(cors(corsOptions));
