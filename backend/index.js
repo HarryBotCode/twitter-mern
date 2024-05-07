@@ -19,9 +19,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 app.use(cookieParser());
 const corsOptions = {
-    origin:"https://twitter-mern-wqom.vercel.app",
-     methods: ["POST", "GET", "PUT", "DELETE"],
-    credentials:true
+    origin:"https://twitter-mern-wqom.vercel.app"
 }
 app.use(cors(corsOptions));
 
