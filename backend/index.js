@@ -12,29 +12,26 @@ dotenv.config({
 databaseConnection();
 const app = express(); 
 
-  
-
 // middlewares
 app.use(express.urlencoded({
     extended:true
 }));
 app.use(express.json());
 app.use(cookieParser());
-// const corsOptions = {
-//     origin:"https://twitter-mern-wqom.vercel.app",
-//     credentials:true
-// }
-
-
-
-app.use(cors());
+const corsOptions = {
+    origin:"http://localhost:3000",
+    credentials:true
+}
+app.use(cors(corsOptions));
 
 // api
 app.use("/api/v1/user",userRoute);
 app.use("/api/v1/tweet", tweetRoute);
+ 
+app.get("/", (req, res) => {
+    res.send("<h1>twitter app backend</h1>");
+  });
 
-const PORT = 8080;
-
-app.listen(PORT,() => {
-    console.log(`Server listen at port ${PORT}`);
+app.listen(process.env.PORT,() => {
+    console.log(`Server listen at port ${process.env.PORT}`);
 })
