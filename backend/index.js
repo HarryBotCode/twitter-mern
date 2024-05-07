@@ -33,6 +33,14 @@ app.get("/", (req, res) => {
     res.send("<h1>twitter app backend</h1>");
 });
 
+// Manually set CORS headers for a specific route
+app.get("/test", (req, res) => {
+    res.header("Access-Control-Allow-Origin", "https://twitter-mern-frontend.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    res.send("Test route");
+});
+
 app.listen(process.env.PORT, () => {
     console.log(`Server listen at port ${process.env.PORT}`);
 });
