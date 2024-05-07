@@ -18,11 +18,11 @@ app.use(express.urlencoded({
 }));
 app.use(express.json());
 app.use(cookieParser());
-const corsOptions = {
-    origin:"https://twitter-mern-wqom.vercel.app",
-    credentials:true
-}
-app.use(cors(corsOptions));
+// const corsOptions = {
+//     origin:"https://twitter-mern-wqom.vercel.app",
+//     credentials:true
+// }
+app.use(cors());
 
 // api
 app.use("/api/v1/user",userRoute);
