@@ -30,7 +30,14 @@ app.use(cors({
 // api
 app.use("/api/v1/user",userRoute);
 app.use("/api/v1/tweet", tweetRoute);
- 
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://twitter-mern-wqom.vercel.app');
+    // other headers...
+    next();
+  });
+
+  
 app.get("/", (req, res) => {
     res.send("<h1>twitter app backend</h1>");
   });
