@@ -22,7 +22,10 @@ app.use(cookieParser());
 //     origin:"https://twitter-mern-wqom.vercel.app",
 //     credentials:true
 // }
-app.use(cors());
+app.use(cors({
+    origin: 'https://twitter-mern-wqom.vercel.app',
+    credentials: true
+  }));
 
 // api
 app.use("/api/v1/user",userRoute);
