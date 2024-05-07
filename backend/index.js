@@ -23,8 +23,9 @@ app.use(cookieParser());
 //     credentials:true
 // }
 app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials:true
+    origin: 'https://twitter-mern-wqom.vercel.app',
+    methods: ["POST", "GET", "PUT"],
+    credentials: true
   }));
 
 // api
