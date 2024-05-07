@@ -27,11 +27,7 @@ app.use(cors(corsOptions));
 app.use("/api/v1/user",userRoute);
 app.use("/api/v1/tweet", tweetRoute);
 
-app.post('/api/v1/user/login', (req, res) => {
-    // Your login logic
-    res.setHeader('Access-Control-Allow-Origin', 'https://twitter-mern-wqom.vercel.app');
-    // Other response headers and data
-});
+a
  
 app.get("/", (req, res) => {
     res.send("<h1>twitter app backend</h1>");
